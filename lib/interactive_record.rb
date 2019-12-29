@@ -53,10 +53,8 @@ class InteractiveRecord
     row = DB[:conn].execute(sql, name)
   end
 
-  def self.find_by(attribute)
-    key = attribute.key.join()
-    value = attribute.values.first
-    sql = "SELECT * FROM #{table_name} WHERE #{key}= #{value} LIMIT 1"
+  def self.find_by(attribute_hash)
+    sql = "SELECT * FROM #{table_name} WHERE #{attribute_hash.keys[0].to_s}= '#{attribute_hash.values[0]}.to_s'"
     row = DB[:conn].execute(sql)
   end
 end
