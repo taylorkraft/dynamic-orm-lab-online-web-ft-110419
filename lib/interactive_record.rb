@@ -20,7 +20,7 @@ class InteractiveRecord
     column_names.compact
   end
 
-  def initialize(id: nil, name)
+  def initialize(id => nil, name)
     @id = id
     @name = name
   end
